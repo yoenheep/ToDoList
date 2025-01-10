@@ -23,6 +23,7 @@ function addList() {
   document.getElementById("addToDo").value = "";
 }
 
+// Delete 버튼
 function on_clicked() {
   let checkedBox = document.getElementById("check");
   let isChecked = checkedBox.isChecked;
