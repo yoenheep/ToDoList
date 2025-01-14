@@ -24,7 +24,7 @@ function addList() {
     span.innerHTML = addToDo;
     let deleteBox = document.createElement("button");
     deleteBox.id = "delete";
-    deleteBox.innerHTML = "x";
+    deleteBox.innerHTML = "✖";
     deleteBox.onclick = () => deleteBox.closest("li").remove();
     li.appendChild(checkBox);
     li.appendChild(span);
