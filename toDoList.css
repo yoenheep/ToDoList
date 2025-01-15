@@ -78,3 +78,12 @@ span {
 li {
   margin-bottom: 10px;
 }
+
+#list li {
+  user-select: none;
+  text-decoration: none;
+}
+
+#list li.complete {
+  text-decoration: line-through;
+}
