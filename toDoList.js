@@ -33,27 +33,24 @@ function addList(storageData) {
   const li = document.createElement("li");
   li.setAttribute("id", "liList"); // li에 id 추가
 
-  // span 생성
-  const span = document.createElement("span");
-  span.textContent = addToDo;
-  span.id = "span";
+  // textNode 생성
+  const textNode = document.createElement("textnode");
+  textNode.textContent = addToDo;
+  textNode.id = "textNode";
 
   // 체크박스 생성
   let checkBox = document.createElement("input");
   checkBox.type = "checkbox";
   checkBox.id = "check";
-  checkBox.addEventListener("change", () => {
-    if (checkBox.checked) {
-      li.classList.toggle("complete");
-      saveList();
-    } else {
-      li.classList.toggle("false");
-      saveList();
-    }
+  checkBox.addEventListener("click", () => {
+    li.classList.toggle("complete");
+
+    saveList();
   });
 
   if (storageData && storageData.complete === true) {
     li.classList.add("complete");
+    checkBox.checked = true;
   }
 
   // 삭제버튼 생성
@@ -65,7 +62,7 @@ function addList(storageData) {
     saveList();
   };
   li.appendChild(checkBox);
-  li.appendChild(span);
+  li.appendChild(textNode);
   li.appendChild(deleteBox);
 
   // ul에 li넣기
@@ -82,7 +79,7 @@ function saveList() {
   const saveLi = [];
   for (let i = 0; i < ul.children.length; i++) {
     const todoObj = {
-      contents: ul.children[i].querySelector("span").textContent,
+      contents: ul.children[i].querySelector("textNode").textContent,
       complete: ul.children[i].classList.contains("complete"),
     };
     saveLi.push(todoObj);

@@ -54,7 +54,7 @@ ul {
   margin-left: 10px;
 }
 
-span {
+#textNode {
   line-height: 35px;
   margin-right: 10px;
 }
@@ -81,7 +81,6 @@ li {
 
 #list li {
   user-select: none;
-  text-decoration: none;
 }
 
 #list li.complete {
